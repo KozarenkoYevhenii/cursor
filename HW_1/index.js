@@ -20,8 +20,8 @@ document.writeln("Сумарна вартість всіх товарів без
 const totalRoundToHundreds = Math.round(totalCost / 100) * 100;
 document.writeln("Сумарна вартість округлена до сотень: ", totalRoundToHundreds, " грн <br>");
 
-const isOdd = (intTotalCost % 2) ? "непарна" : "парна";
-document.writeln("Сумарна вартість всіх товарів без копійок: ", isOdd, "<br>");
+const isOdd = (intTotalCost % 2) ? false : true;
+document.writeln("Сума всіх товарів (округлена в меншу сторону) парна: ", isOdd, "<br>");
 
 const change = cashAmount - totalCost;
 document.writeln("Решта з 500 грн: ", maxPrice, " грн <br>");
