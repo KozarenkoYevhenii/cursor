@@ -1,6 +1,6 @@
 //Найбільша цифра в числі
 const getMaxDigit = (number) => {
-  const digits = number.toString().split("");
+  const digits = Math.abs(number).toString().split("");
   let maxDigit = Math.max(...digits);
   return maxDigit;
 };
