@@ -20,15 +20,10 @@ let missEven = confirm("Do you wanna miss even numbers?");
 
 let sum = 0;
 for (N; N <= M; N++) {
-  if (missEven) {
-    if (N % 2 === 0) {
-      continue;
-    } else {
-      sum += N;
-    }
-  } else {
-    sum += N;
+  if (missEven && N % 2 === 0) {
+    continue;
   }
+  sum += N;
 }
 
 document.writeln(`Сума = ${sum}`);
