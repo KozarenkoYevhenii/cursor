@@ -41,12 +41,11 @@ const studentsMarks = getStudentsMarks(students, marks);
 
 //4 Виставити оцінки за проект в парах
 const getPairsMarks = (teamThemes) => {
-  const pairsThemes = [...teamThemes];
-  pairsThemes[0] = [...teamThemes[0]];
-  pairsThemes[1] = [...teamThemes[1]];
-  pairsThemes[2] = [...teamThemes[2]];
-  pairsThemes.map((pair) => pair.push(Math.ceil(Math.random() * 5)));
-  return pairsThemes;
+  const pairsMarks = [...teamThemes].map((pair) => [
+    ...pair,
+    Math.ceil(Math.random() * 5),
+  ]);
+  return pairsMarks;
 };
 const pairsMarks = getPairsMarks(teamThemes);
 
