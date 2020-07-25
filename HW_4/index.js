@@ -19,17 +19,10 @@ const pairs = getPairs(students);
 
 //2 Призначення теми кожній парі студентів
 const getTheme = (pairs, themes) => {
-  const pairsCopy = [...pairs];
-  pairsCopy[0] = [...pairs[0]];
-  pairsCopy[1] = [...pairs[1]];
-  pairsCopy[2] = [...pairs[2]];
-  let i = 0;
-  const pairsWithThemes = pairsCopy.map((pair) => {
-    pair[0] = pair.join(" і ");
-    pair[1] = themes[i];
-    i++;
-    return pair;
-  });
+  const pairsWithThemes = [...pairs].map((pair, i) => [
+    pair.join(" і "),
+    themes[i],
+  ]);
   return pairsWithThemes;
 };
 const teamThemes = getTheme(pairs, themes);
