@@ -58,13 +58,100 @@ const replaceBadWords = (string) => {
     .join(" ");
 };
 
+//9 Розбиває слово на склади
+const divideByThree = (word) => {
+  const resultArray = [];
+  for (let i = 0; i < word.length; i += 3) {
+    if (word.length - i < 3) {
+      resultArray.push(word.toLowerCase().slice(i));
+    } else {
+      resultArray.push(word.toLowerCase().slice(i, i + 3));
+    }
+  }
+  return resultArray;
+};
+
+//10 Генерує комбінації літер
+const generateCombinations = (word) => {};
+
 //OUTPUT
 
-document.writeln(`1 Масив випадкових чисел: ${getRandomArray(15, 1, 100)} <br>`);
+document.writeln(
+  `1 Масив випадкових чисел: ${getRandomArray(15, 1, 100)} <br>`
+);
 document.writeln(`3 Середнє значення масиву: 
-                  ${getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2)} <br>`);
-document.writeln(`4 Медіана: ${getMedian(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2)} <br>`);
-document.writeln(`5 Фільтр парних чисел: ${filterEvenNumbers(1, 2, 3, 4, 5, 6)} <br>`);
-document.writeln(`6 Кількість додатніх чисел: ${countPositiveNumbers(1, -2, 3, -4, -5, 6)} <br>`);
-document.writeln(`7 Числа кратні 5: ${getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2)} <br>`);
-document.writeln(`8 Погані слова замінені на *: ${replaceBadWords("Holy shit!")} <br>`);
+                  ${getAverage(
+                    6,
+                    2,
+                    55,
+                    11,
+                    78,
+                    2,
+                    55,
+                    77,
+                    57,
+                    87,
+                    23,
+                    2,
+                    56,
+                    3,
+                    2
+                  )} <br>`);
+document.writeln(
+  `4 Медіана: ${getMedian(
+    6,
+    2,
+    55,
+    11,
+    78,
+    2,
+    55,
+    77,
+    57,
+    87,
+    23,
+    2,
+    56,
+    3,
+    2
+  )} <br>`
+);
+document.writeln(
+  `5 Фільтр парних чисел: ${filterEvenNumbers(1, 2, 3, 4, 5, 6)} <br>`
+);
+document.writeln(
+  `6 Кількість додатніх чисел: ${countPositiveNumbers(
+    1,
+    -2,
+    3,
+    -4,
+    -5,
+    6
+  )} <br>`
+);
+document.writeln(
+  `7 Числа кратні 5: ${getDividedByFive(
+    6,
+    2,
+    55,
+    11,
+    78,
+    2,
+    55,
+    77,
+    57,
+    87,
+    23,
+    2,
+    56,
+    3,
+    2
+  )} <br>`
+);
+document.writeln(
+  `8 Погані слова замінені на *: ${replaceBadWords("Holy shit!")} <br>`
+);
+
+document.writeln(
+  `9 Слово розбите по складах: ${divideByThree("Commander")} <br>`
+);
