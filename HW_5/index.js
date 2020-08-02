@@ -2,21 +2,23 @@
 const getRandomArray = (length, min, max) => {
   const randomArray = new Array(length)
     .fill(null)
-    .map((el) => +(Math.random() * (max - min) + min).toFixed());
+    .map((el) => +Math.trunc(Math.random() * (max - min) + min));
   return randomArray;
 };
 
 //3 Розраховує середнє арифметичне число
 const getAverage = (...numbers) => {
+  const intNumbers = numbers.filter((el) => Number.isInteger(el));
   const average =
-    numbers.filter((el) => !(el % 1)).reduce((total, el) => total + el, 0) /
-    numbers.filter((el) => !(el % 1)).length;
+    intNumbers.reduce((total, el) => total + el, 0) / intNumbers.length;
   return average;
 };
 
 //4 Отримує медіану
 const getMedian = (...numbers) => {
-  const sortedArray = numbers.filter((el) => !(el % 1)).sort((a, b) => a - b);
+  const sortedArray = numbers
+    .filter((el) => Number.isInteger(el))
+    .sort((a, b) => a - b);
   if (sortedArray.length % 2) {
     return sortedArray[Math.floor(sortedArray.length / 2)];
   }
@@ -29,7 +31,7 @@ const getMedian = (...numbers) => {
 
 //5 Фільтрує парні числа
 const filterEvenNumbers = (...numbers) => {
-  return numbers.filter((el) => !(el % 1)).filter((el) => el % 2);
+  return numbers.filter((el) => el % 2);
 };
 
 //6 Рахує кількість додатніх чисел
