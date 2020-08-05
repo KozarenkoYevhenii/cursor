@@ -73,9 +73,6 @@ const divideByThree = (word) => {
   return resultArray;
 };
 
-//10 Генерує комбінації літер
-const generateCombinations = (word) => {};
-
 //OUTPUT
 
 document.writeln(
