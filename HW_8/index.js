@@ -34,7 +34,11 @@ class Student {
 }
 
 //1 Створюємо екземпляр класу Student
-let student = new Student("Вища Школи Психотерапії м.Одеса", 1, "Остап Бендер");
+const student = new Student(
+  "Вища Школи Психотерапії м.Одеса",
+  1,
+  "Остап Бендер"
+);
 console.log(student);
 document.writeln(`1 Створений екземпляр класу виведений в консоль <br>`);
 //2 Метод повертає інформацію про студента
@@ -57,12 +61,32 @@ document.writeln(`7 Оцінки студента: ${student.marks} <br>`);
 student.marks = 5;
 document.writeln(`7 Додаємо оцінку: ${student.marks} <br>`);
 
-
 //-------------------Advanced-------------------------------
 
 class BudgetStudent extends Student {
-  super()
-
+  constructor(university, course, fullName) {
+    super(university, course, fullName);
+    setInterval(() => {
+      if (this.getAverageMark() >= 4 && this.dismissStatus === false) {
+        this.getScholarship();
+      }
+    }, 30000);
+  }
+  getScholarship() {
+    console.log(`Ви отримали 1400 грн. стипендії`);
+  }
 }
-budgetStudent
-console.log();
+
+document.writeln(`Advanced <br>`);
+//1 Створюємо екземпляр класу BudgetStudent
+const budgetStudent = new BudgetStudent(
+  "Вища Школи Психотерапії м.Одеса",
+  1,
+  "Остап Бендер"
+);
+console.log(budgetStudent);
+document.writeln(`1 Створений екземпляр класу виведений в консоль <br>`);
+//2 Студент отримує стипендію за умови що він не виключений і його середній бал >= 4
+document.writeln(
+  `2,3,4,5 Результат запиту на стипендію виведений в консоль (очікуйте 30 секунд) <br>`
+);
