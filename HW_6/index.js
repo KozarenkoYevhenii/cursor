@@ -77,7 +77,7 @@ const getAverageMark = (student) => {
   for (let subject of subjects) {
     allMarks = [...allMarks, ...Object.values(student.subjects[subject])];
   }
-  return getAverage(allMarks).toFixed(2);
+  return +getAverage(allMarks).toFixed(2);
 };
 
 //3 Загальна інформація про студента

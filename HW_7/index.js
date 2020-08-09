@@ -21,11 +21,12 @@ function getTotalTaxes() {
 function getMySalary(country) {
   minSalary = 1500;
   maxSalary = 2000;
-  let salaryInfo = { salary: null, taxes: country.tax, profit: null };
+  let salaryInfo = { salary: null, taxes: null, profit: null };
   setInterval(() => {
     salaryInfo.salary = parseInt(
       Math.random() * (maxSalary - minSalary) + minSalary
     );
+    salaryInfo.taxes = country.tax * salaryInfo.salary;
     salaryInfo.profit = parseInt(salaryInfo.salary * (1 - country.tax));
     console.log(salaryInfo);
   }, 10000);
@@ -38,7 +39,9 @@ document.writeln(
 );
 document.writeln(`2 Середня сума податку: ${getMiddleTaxes.call(latvia)} <br>`);
 document.writeln(
-  `3 Загальна сума податків ІТ спеціалістів в країні: ${getTotalTaxes.call(litva)} <br>`
+  `3 Загальна сума податків ІТ спеціалістів в країні: ${getTotalTaxes.call(
+    litva
+  )} <br>`
 );
 document.writeln(`4 Результат виведений в консоль`);
 getMySalary(ukraine);
