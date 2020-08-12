@@ -30,7 +30,7 @@ generateBlocks()
 
 const generateBlocksInterval = () => {
   setInterval(() => { document.body.innerHTML = '' }, 1000)
-  setInterval(() => { generateBlocks() }, 1000)
+  setInterval(generateBlocks, 1000)
 }
 
 generateBlocksInterval()
