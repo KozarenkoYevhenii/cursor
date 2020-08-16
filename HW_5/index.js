@@ -6,6 +6,29 @@ const getRandomArray = (length, min, max) => {
   return randomArray;
 };
 
+//2 Шукає моду
+const getModa = (...numbers) => {
+  let moda = [];
+  let maxCount = 0;
+  numbers.forEach((el, ind) => {
+    let count = 0;
+    for (let i in numbers) {
+      if (numbers[i] === el) {
+        count++;
+      }
+    }
+    if (maxCount < count) maxCount = count;
+    if (ind === numbers.lastIndexOf(el)) {
+      moda.push({ [el]: count });
+    }
+  });
+  moda = moda.filter(el => Object.values(el)[0] === maxCount).map(el => +Object.keys(el)[0])
+  console.log(...moda);
+  
+};
+
+getModa(1, 2, 2, 3);
+
 //3 Розраховує середнє арифметичне число
 const getAverage = (...numbers) => {
   const intNumbers = numbers.filter((el) => Number.isInteger(el));
@@ -72,6 +95,22 @@ const divideByThree = (word) => {
   }
   return resultArray;
 };
+
+//10
+// function generateCombinations(word) {
+//   if (word.length >= 10) return 'please, input word less then 10 letters'
+//   if (word.length === 0) return ['']
+//   const result = {}
+//   const data = [...new Set(word.toLowerCase())].join('')
+
+//   data.split('').forEach((letter, i) => {
+//     const remainingLetters = data.slice(0, i) + data.slice(i + 1)
+
+//     generateCombinations(remainingLetters).forEach(anagram => {
+//       result[letter + anagram] = true
+//     })
+//   })
+//   return Object.keys(result)
 
 //OUTPUT
 

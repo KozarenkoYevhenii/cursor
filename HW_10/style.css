@@ -1,0 +1,12 @@
+.icon {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.icon > img {
+    width : 70px;
+    height: 70px;
+    margin: 0 10px;
+}
