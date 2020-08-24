@@ -1,4 +1,5 @@
 function getRandomChinese(length) {
+  const startTime = Date.now();
   return new Promise((resolve, reject) => {
     if (length === 0 || !Number.isInteger(length)) reject();
     let signs = "";
@@ -11,7 +12,11 @@ function getRandomChinese(length) {
       i++;
     }
   })
-    .then((signs) => console.log(signs))
+    .then((signs) => {
+      const endTime = Date.now();
+      const duration = endTime - startTime;
+      console.log(`${signs} ${duration}ms`)
+    })
     .catch(() => console.log("Введіть ціле число більше за нуль"));
 }
 
