@@ -10,9 +10,11 @@ document.getElementById("getPlanets").addEventListener("click", () => {
 
 async function getPersonagesInfo() {
   const result = await axios(`${BASE_URL}films/2`);
+  console.log(result);
   const characters = [];
   for (let i = 0; i < result.data.characters.length; i++) {
     let character = await axios(result.data.characters[i].replace("http", "https"));
+    console.log(character);
     characters.push([
       character.data.name,
       character.data.birth_year,
