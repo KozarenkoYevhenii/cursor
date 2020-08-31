@@ -12,7 +12,7 @@ async function getPersonagesInfo() {
   const result = await axios(`${BASE_URL}films/2`);
   const characters = [];
   for (let i = 0; i < result.data.characters.length; i++) {
-    let character = await axios(result.data.characters[i]);
+    let character = await axios(result.data.characters[i].replace("http", "https"));
     characters.push([
       character.data.name,
       character.data.birth_year,
