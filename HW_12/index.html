@@ -3,15 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
     <title>Homework#12</title>
   </head>
   <body>
-    <button id="getPersonages" type="button">Get Personages</button>
-    <button id="getPlanets" type="button">Get Planets</button>
-    <button id="prev" type="button">Prev</button>
-    <button id="next" type="button">Next</button>
-    <div id="planets"></div>
-    <div id="personages"></div>
+    <div class="mainWrapper">
+      <div class="buttonPanel">
+        <label class='labelText' for="filmNumber">Enter the movie number:</label>
+        <select name="filmNumber" id="filmNumber">
+          <option value="1">1</option>
+          <option selected="selected" value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+        <button id="getPersonages" type="button">Get Personages</button>
+        <button id="getPlanets" type="button">Get Planets</button>
+        <button id="prev" type="button">Prev</button>
+        <button id="next" type="button">Next</button>
+      </div>
+      <div id="characters"></div>
+      <div id="planets"></div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="index.js"></script>
   </body>

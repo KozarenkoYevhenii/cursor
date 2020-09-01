@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'starjedi';
+    src: url('./Starjedi.ttf');
+}
+body {
+  background-image: url('./Stars.jpg');
+  font-family: starjedi;
+}
+.mainWrapper {
+  margin: 20px;
+}
+.buttonPanel {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.labelText, #characters, #planets {
+    color: yellow;
+    padding-right: 10px;
+}
+#characters {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: space-around;
+    justify-items: stretch;
+    margin-top: 20px;
+    letter-spacing: 2px;
+}
+#planets{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    margin-top: 20px; 
+    font-size: 25px;
+}
+.planet {
+    padding-top: 15px;
+}
