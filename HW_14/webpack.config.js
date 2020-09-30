@@ -4,7 +4,6 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
 
 module.exports = {
-  
   entry: "./src/index.js",
   devServer: {
     contentBase: "./",
@@ -28,15 +27,9 @@ module.exports = {
         test: /\.(png|svg|jpg|gif)$/,
         use: ["file-loader"],
       },
-      {
-        test: /\.m?js$/,
-        exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env']
-          }
-        }
+      { test: /\.js$/, 
+        exclude: /node_modules/,
+        loader: 'babel-loader' 
       },
     ],
   },
